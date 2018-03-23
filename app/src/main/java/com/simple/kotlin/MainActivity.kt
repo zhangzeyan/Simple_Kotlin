@@ -2,8 +2,7 @@ package com.simple.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.simple.kotlin.chapter2.*
-import com.simple.kotlin.chapter3.lambda
+import com.simple.kotlin.chapter3.classMember
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +17,8 @@ class MainActivity : AppCompatActivity() {
 //        nullType()
 //        range()
 //        arrayTest()
-        lambda()
+//        lambda()
+        classMember()
     }
 
 }
