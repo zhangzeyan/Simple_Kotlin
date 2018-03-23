@@ -1,36 +1,36 @@
 package com.simple.kotlin.chapter2
 
 
-var aBoolean: Boolean = true
+val aBoolean: Boolean = true
 
-var anInt: Int = 8
-var maxInt: Int = Int.MAX_VALUE
-var minInt: Int = Int.MIN_VALUE
+val anInt: Int = 8
+val maxInt: Int = Int.MAX_VALUE
+val minInt: Int = Int.MIN_VALUE
 
-var aLong: Long = 123131131324134324L
-var maxLong: Long = Long.MAX_VALUE
-var minLong: Long = Long.MIN_VALUE
+val aLong: Long = 123131131324134324L
+val maxLong: Long = Long.MAX_VALUE
+val minLong: Long = Long.MIN_VALUE
 
-var aShort: Short = 123
-var maxShort: Short = Short.MAX_VALUE
-var minShort: Short = Short.MIN_VALUE
+val aShort: Short = 123
+val maxShort: Short = Short.MAX_VALUE
+val minShort: Short = Short.MIN_VALUE
 
-var aFloat: Float = 12.9f
-var maxFloat: Float = Float.MAX_VALUE
-var minFloat: Float = -Float.MAX_VALUE
+val aFloat: Float = 12.9f
+val maxFloat: Float = Float.MAX_VALUE
+val minFloat: Float = -Float.MAX_VALUE
 
-var aDouble: Double = 12.9
-var maxDouble: Double = Double.MAX_VALUE
-var minDouble: Double = -Double.MAX_VALUE
+val aDouble: Double = 12.9
+val maxDouble: Double = Double.MAX_VALUE
+val minDouble: Double = -Double.MAX_VALUE
 
 
-var aByte: Byte = 19
-var maxByte: Byte = Byte.MAX_VALUE
-var minByte: Byte = Byte.MIN_VALUE
+val aByte: Byte = 19
+val maxByte: Byte = Byte.MAX_VALUE
+val minByte: Byte = Byte.MIN_VALUE
 
-var aChar: Char = 'a'
+val aChar: Char = 'a'
 
-var aString: String = "aa"
+val aString: String = "aa"
 
 
 fun typeofData() {

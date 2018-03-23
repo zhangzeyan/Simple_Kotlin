@@ -19,17 +19,22 @@ fun typeConvert() {
     println(s1)
     println(s2)
 
-    val c:Parent = Child("child", "parent")
+    val c: Parent = Child("child", "parent")
     if (c is Child) {
         println(c.child)
+        println(c.getName())
     }
 
-    var p:Parent = Parent("parent")
-    var c1:Child? = p as? Child
+    var p: Parent = Parent("parent")
+    var c1: Child? = p as? Child
     println(c1)
 }
 
 
-class Child(var child: String, parent: String) : Parent(parent)
+class Child(var child: String, parent: String) : Parent(parent) {
+    fun getName(): String {
+        return "simple" + child
+    }
+}
 
 open class Parent(var parent: String)
