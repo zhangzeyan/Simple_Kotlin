@@ -2,7 +2,8 @@ package com.simple.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.simple.kotlin.chapter3.classMember
+import com.simple.kotlin.chapter3.*
+import com.simple.kotlin.chapter4.interfaceDemo
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +19,13 @@ class MainActivity : AppCompatActivity() {
 //        range()
 //        arrayTest()
 //        lambda()
-        classMember()
+//        classMember()
+//        infixExpression()
+//        ifExpression()
+//        whenExpression()
+//        forExpression()
+//        params()
+        interfaceDemo()
     }
 
 }
