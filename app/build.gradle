@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -21,6 +24,15 @@ android {
         }
     }
 }
+
+noArg{
+     annotation("com.simple.kotlin.chapter4.annotations.PoKo")
+}
+
+allOpen{
+     annotation("com.simple.kotlin.chapter4.annotations.PoKo")
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

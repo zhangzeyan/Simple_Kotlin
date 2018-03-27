@@ -1,7 +1,12 @@
 package com.simple.kotlin.chapter4
 
+import android.view.View.X
+import com.simple.kotlin.chapter4.annotations.PoKo
+import kotlin.reflect.KProperty
+
 
 fun interfaceDemo() {
+
 //    var c = C("Simple")
 //    println(c.aMethod())
 //    println(c.bMethod())
@@ -21,8 +26,30 @@ fun interfaceDemo() {
 //    J.jMethod()
 
 
-    println(K.ofDouble(12.8).myTest())
-    println(K.myStaticMethod())
+//    println(K.ofDouble(12.8).myTest())
+//    println(K.myStaticMethod())
+
+//    println("simple".multiply(12))
+//    println("kotlin" * 12)
+//    "kotlin".extendString = "ktv"
+//    println("kotlin".extendString)
+
+//    val de = Delegates()
+//    println(de.hello)
+//    println(de.hello2)
+//    println(de.hello3)
+//    de.hello3 = "hello3"
+//    println(de.hello3)
+
+    val myClass = MyDataClass("Simple", 28)
+    println(myClass)
+    println(myClass.component1())
+    println(myClass.component2())
+
+    val myClass1 = MyDataClass1("Simple", 28)
+    println(myClass1)
+    val (a, b, c, d, e, f) = myClass1
+    println("$a$b$c$d$e$f")
 
 }
 
@@ -116,19 +143,19 @@ object J {
     }
 }
 
-//伴生对象
-class K  private constructor(val value: Double) {
+//伴生对象和静态成员
+class K private constructor(val value: Double) {
     companion object {
-        fun ofDouble(double: Double):K{
+        fun ofDouble(double: Double): K {
             return K(double)
         }
 
         @JvmStatic
-        fun myStaticMethod():Int{
+        fun myStaticMethod(): Int {
             return 12
         }
 
-        fun myStaticMethod1():Int{
+        fun myStaticMethod1(): Int {
             return 13
         }
 
@@ -136,7 +163,94 @@ class K  private constructor(val value: Double) {
         val tag = 12
     }
 
-    fun myTest(): String{
+    fun myTest(): String {
         return "the number is $value"
     }
 }
+
+//扩展成员
+
+fun String.multiply(int: Int): String {
+    val stringBuilder = StringBuilder()
+    for (i in 0 until int) {
+        stringBuilder.append(this)
+    }
+    return stringBuilder.toString()
+}
+
+operator fun String.times(int: Int): String {
+    val stringBuilder = StringBuilder()
+    for (i in 0 until int) {
+        stringBuilder.append(this)
+    }
+    return stringBuilder.toString()
+}
+
+var String.extendString: String
+    set(value) {
+
+    }
+    get() = "Simple"
+
+
+//属性代理
+
+class Delegates {
+    val hello by lazy {
+        "hello"
+    }
+
+    val hello2 by X()
+
+    var hello3 by X()
+}
+
+class X {
+
+    private var value: String? = null
+
+    operator fun getValue(any: Any?, property: KProperty<*>): String {
+        return value ?: "hello2"
+    }
+
+    operator fun setValue(any: Any?, property: KProperty<*>, value: String) {
+        this.value = value
+    }
+
+}
+
+//数据类 data
+data class MyDataClass(val name: String, val age: Int)
+
+
+class MyDataClass1(val name: String, val age: Int) {
+    operator fun component1(): String {
+        return "s"
+    }
+
+    operator fun component2(): String {
+        return "i"
+    }
+
+    operator fun component3(): String {
+        return "m"
+    }
+
+    operator fun component4(): String {
+        return "p"
+    }
+
+    operator fun component5(): String {
+        return "l"
+    }
+
+    operator fun component6(): String {
+        return "e"
+    }
+}
+
+//noArg插件和allOpen插件
+@PoKo
+data class MyDataClass2(val name: String, val age: Int)
+
+class MyDataClass3(override val name: String, override val age: Int) : MyDataClass2(name, age)
