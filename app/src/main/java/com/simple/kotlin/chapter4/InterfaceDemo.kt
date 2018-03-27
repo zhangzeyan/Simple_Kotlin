@@ -1,6 +1,8 @@
 package com.simple.kotlin.chapter4
 
+import android.view.View
 import android.view.View.X
+import com.simple.kotlin.chapter2.a
 import com.simple.kotlin.chapter4.annotations.PoKo
 import kotlin.reflect.KProperty
 
@@ -41,15 +43,38 @@ fun interfaceDemo() {
 //    de.hello3 = "hello3"
 //    println(de.hello3)
 
-    val myClass = MyDataClass("Simple", 28)
-    println(myClass)
-    println(myClass.component1())
-    println(myClass.component2())
+//    val myClass = MyDataClass("Simple", 28)
+//    println(myClass)
+//    println(myClass.component1())
+//    println(myClass.component2())
+//
+//    val myClass1 = MyDataClass1("Simple", 28)
+//    println(myClass1)
+//    val (a, b, c, d, e, f) = myClass1
+//    println("$a$b$c$d$e$f")
 
-    val myClass1 = MyDataClass1("Simple", 28)
-    println(myClass1)
-    val (a, b, c, d, e, f) = myClass1
-    println("$a$b$c$d$e$f")
+//    var inner = Outter.Inner()
+//    var inner1 = Outter().Inner1()
+
+//    val view = MyView()
+//    view.myClick = object: Outter(), View.OnClickListener {
+//        override fun myMethod(string: String) {
+//            println("myMethod")
+//        }
+//
+//        override fun onClick(v: View?) {
+//            println("hello , simple")
+//        }
+//    }
+
+    println(Subject.CHINESE.deName)
+    println(Subject.CHINESE.id)
+    println(Subject.CHINESE.name)
+    println(Subject.CHINESE.ordinal)
+
+    Subject.values().map(::println)
+
+    println(Subject.valueOf("MATHE"))
 
 }
 
@@ -254,3 +279,50 @@ class MyDataClass1(val name: String, val age: Int) {
 data class MyDataClass2(val name: String, val age: Int)
 
 class MyDataClass3(override val name: String, override val age: Int) : MyDataClass2(name, age)
+
+//内部类
+open class Outter {
+
+    val outterA: Int = 9
+
+    class Inner {
+        init {
+            println(Outter().outterA)
+        }
+    }
+
+    inner class Inner1 {
+        val outterA: Int = 8
+
+        init {
+            println(this@Outter.outterA)
+            println(this.outterA)
+        }
+    }
+
+    open fun myMethod(string: String) {
+
+    }
+}
+
+//匿名内部类
+class MyView {
+    var myClick: View.OnClickListener? = null
+}
+
+//枚举类型
+
+enum class Subject(val id: Int, val deName: String) {
+    ENGLISH(1, "英语"), CHINESE(2, "语文"), MATHE(3, "数学")
+}
+
+//密封类
+sealed class PlayerCmd {
+
+}
+
+class Play(val url: String, val position: Long = 0) : PlayerCmd()
+class Seek() : PlayerCmd()
+object Pause : PlayerCmd()
+object Resume : PlayerCmd()
+object Stop: PlayerCmd()
