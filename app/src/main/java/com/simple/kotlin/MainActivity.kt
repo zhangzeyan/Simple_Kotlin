@@ -2,8 +2,7 @@ package com.simple.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.simple.kotlin.chapter3.*
-import com.simple.kotlin.chapter4.interfaceDemo
+import com.simple.kotlin.chapter5.functionTest
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //chapter2
 //        typeofData()
 //        typeConvert()
 //        typeString()
@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 //        nullType()
 //        range()
 //        arrayTest()
+
+        //chapter3
 //        lambda()
 //        classMember()
 //        infixExpression()
@@ -25,7 +27,12 @@ class MainActivity : AppCompatActivity() {
 //        whenExpression()
 //        forExpression()
 //        params()
-        interfaceDemo()
+
+        //chapter4
+//        interfaceDemo()
+
+        //chapter5
+        functionTest()
     }
 
 }
