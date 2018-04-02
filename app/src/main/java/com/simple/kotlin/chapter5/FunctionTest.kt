@@ -1,5 +1,9 @@
 package com.simple.kotlin.chapter5
 
+import android.system.Os.close
+import java.io.BufferedReader
+import java.io.FileReader
+
 
 fun functionTest() {
 
@@ -45,17 +49,60 @@ fun functionTest() {
 //    }
 //
 //    flatList.forEach(::println)
-//
-//    //reduce使用
+
+    //reduce使用
 //    println(flatList.reduce { acc, i -> acc + i })
-//
+
 //    println(factorial(4))
 //    (0..4).map(::factorial).forEach(::println)
 
     //fold使用
-    println((1..4).fold(2){acc, i -> acc+i })
-    println((1..4).fold(StringBuilder()){ acc, i -> acc.append(i).append(",")})
-    println((1..4).joinToString(","))
+//    println((1..4).fold(2){acc, i -> acc+i })
+//    println((1..4).fold(StringBuilder()){ acc, i -> acc.append(i).append(",")})
+//    println((1..4).joinToString(","))
+
+    //filter使用
+//    println((1..4).map(::factorial).filter { it % 2 == 1 })
+//    println((1..4).map(::factorial).filterIndexed { index, i -> index % 2 == 1 })
+
+
+    //takeWhile使用
+//    println((1..4).map(::factorial).takeWhile { it % 3 != 0 })
+//
+//    //.let使用
+//    findPerson()?.let { (name, age) ->
+//        println(name)
+//        println(age)
+//    }
+//
+//    findPerson()?.let { person ->
+//        person.work()
+//    }
+//
+//    //apply使用
+//    findPerson()?.apply {
+//        println(name)
+//        work()
+//    }
+//
+//    //with使用
+//    with(findPerson1()) {
+//        work()
+//    }
+
+    //尾递归优化
+//    val MAX_NODE_COUNT = 100000
+//    val head = ListNode(0)
+//    var p = head
+//    for (i in 1..MAX_NODE_COUNT) {
+//        p.next = ListNode(i)
+//        p = p.next!!
+//    }
+
+    //闭包
+    val add5 = add(5)
+    println(add5)
+    println(add5(2))
 
 }
 
@@ -68,4 +115,36 @@ class Hello {
 fun factorial(n: Int): Int {
     if (n == 0) return 1
     return (1..n).reduce { acc, i -> acc * i }
+}
+
+
+data class Person(val name: String, val age: Int) {
+    fun work() {
+        println("$name, $age is programmer.")
+    }
+}
+
+fun findPerson(): Person? {
+    return Person("Simple", 28)
+}
+
+fun findPerson1(): Person {
+    return Person("Simple", 28)
+}
+
+tailrec fun findListNode(head: ListNode?, value: Int): ListNode? {
+    head ?: return null
+    if (head.value == value) return head
+    return findListNode(head.next, value)
+}
+
+data class ListNode(val value: Int, var next: ListNode? = null)
+
+
+fun add(x: Int) = fun(y: Int) = x + y
+
+fun add1(x: Int): (Int) -> Int {
+    return fun(y: Int): Int {
+        return x + y
+    }
 }
