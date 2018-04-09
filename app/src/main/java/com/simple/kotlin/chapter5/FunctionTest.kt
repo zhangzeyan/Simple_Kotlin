@@ -1,8 +1,11 @@
 package com.simple.kotlin.chapter5
 
 import android.system.Os.close
+import android.util.Log
 import java.io.BufferedReader
 import java.io.FileReader
+import java.io.OutputStream
+import java.nio.charset.Charset
 
 
 fun functionTest() {
@@ -100,10 +103,26 @@ fun functionTest() {
 //    }
 
     //闭包
-    val add5 = add(5)
-    println(add5)
-    println(add5(2))
+//    val add5 = add(5)
+//    println(add5)
+//    println(add5(2))
 
+    //函数复合
+//    val andWhen = add3 andWhen mul2
+//    println(andWhen(9))
+//
+//    val andWhen1 = add3 andWhen1 mul2
+//    println(andWhen1(9))
+
+    //柯里化
+//    log("simple")(System.out)("hello")
+//    ::log.mynew()("simple")(System.out)("hello")
+
+
+    //偏函数
+    val bytes = "我是中国人".toByteArray(charset("GBK"))
+    val stringFromGBK = makeStringFromGbkBytes(bytes)
+    println(stringFromGBK)
 }
 
 class Hello {
@@ -148,3 +167,36 @@ fun add1(x: Int): (Int) -> Int {
         return x + y
     }
 }
+
+val add3 = { i: Int -> i + 3 }
+val mul2 = { i: Int -> i * 2 }
+
+infix fun <P1, P2, R> Function1<P1, P2>.andWhen(function: Function1<P2, R>): Function1<P1, R> {
+    return fun(p1: P1): R {
+        return function.invoke(this.invoke(p1))
+    }
+}
+
+infix fun <P1, P2, R> Function1<P2, R>.andWhen1(function: Function1<P1, P2>): Function1<P1, R> {
+    return fun(p1: P1): R {
+        return this.invoke(function.invoke(p1))
+    }
+}
+
+
+fun log(tag: String, target: OutputStream, message: Any?) {
+    target.write("$tag $message".toByteArray())
+}
+
+//fun log(tag: String) = fun(target: OutputStream) = fun(message: Any?) = target.write("$tag $message".toByteArray())
+
+fun <P1, P2, P3, R> Function3<P1, P2, P3, R>.mynew() = fun(p1: P1) = fun(p2: P2) = fun(p3: P3) = this(p1, p2, p3)
+
+
+val makeString = fun(byteArray: ByteArray, charset: Charset): String {
+    return String(byteArray,charset)
+}
+
+val makeStringFromGbkBytes = makeString.partial2(charset("GBK"))
+
+fun<P1,P2,R> Function2<P1,P2,R>.partial2(p2: P2)= fun(p1: P1)= this(p1,p2)
