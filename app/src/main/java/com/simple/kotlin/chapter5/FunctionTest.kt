@@ -1,6 +1,7 @@
 package com.simple.kotlin.chapter5
 
 import android.system.Os.close
+import android.text.TextUtils
 import android.util.Log
 import java.io.BufferedReader
 import java.io.FileReader
@@ -119,10 +120,11 @@ fun functionTest() {
 //    ::log.mynew()("simple")(System.out)("hello")
 
 
-    //偏函数
-    val bytes = "我是中国人".toByteArray(charset("GBK"))
-    val stringFromGBK = makeStringFromGbkBytes(bytes)
-    println(stringFromGBK)
+//    //偏函数
+//    val bytes = "我是中国人".toByteArray(charset("GBK"))
+//    val stringFromGBK = makeStringFromGbkBytes(bytes)
+//    println(stringFromGBK)
+
 }
 
 class Hello {

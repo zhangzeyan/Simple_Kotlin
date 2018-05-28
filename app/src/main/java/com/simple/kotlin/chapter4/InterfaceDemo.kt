@@ -9,6 +9,7 @@ import kotlin.reflect.KProperty
 
 fun interfaceDemo() {
 
+
 //    var c = C("Simple")
 //    println(c.aMethod())
 //    println(c.bMethod())
@@ -43,10 +44,10 @@ fun interfaceDemo() {
 //    de.hello3 = "hello3"
 //    println(de.hello3)
 
-//    val myClass = MyDataClass("Simple", 28)
-//    println(myClass)
-//    println(myClass.component1())
-//    println(myClass.component2())
+    val myClass = MyDataClass("Simple", 28)
+    println(myClass)
+    println(myClass.component1())
+    println(myClass.component2())
 //
 //    val myClass1 = MyDataClass1("Simple", 28)
 //    println(myClass1)
@@ -75,6 +76,7 @@ fun interfaceDemo() {
     Subject.values().map(::println)
 
     println(Subject.valueOf("MATHE"))
+
 
 }
 
