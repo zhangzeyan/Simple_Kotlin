@@ -21,3 +21,7 @@ fun getName(): String? {
     return null
 }
 
+
+fun main(args: Array<String>) {
+    nullType()
+}

@@ -3,6 +3,7 @@ package com.simple.kotlin
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.simple.kotlin.chapter5.functionTest
+import com.simple.shop.ui.activity.R
 
 class TestActivity : AppCompatActivity() {
 

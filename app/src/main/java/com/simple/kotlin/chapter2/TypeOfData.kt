@@ -68,3 +68,7 @@ fun typeofData() {
     println(aString)
 
 }
+
+fun main(args: Array<String>) {
+    typeofData()
+}

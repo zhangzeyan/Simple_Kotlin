@@ -25,3 +25,7 @@ fun arrayTest(){
     println(arrayChar.slice(1..2).joinToString(""))
 
 }
+
+fun main(args: Array<String>) {
+    arrayTest()
+}

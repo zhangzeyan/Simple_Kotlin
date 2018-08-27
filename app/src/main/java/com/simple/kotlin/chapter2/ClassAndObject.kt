@@ -15,3 +15,8 @@ class ClassAndObjectInit(var member:String){
 fun classAndObject(){
     ClassAndObjectInit("simple")
 }
+
+
+fun main(args: Array<String>) {
+    classAndObject()
+}

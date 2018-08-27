@@ -38,3 +38,8 @@ class Child(var child: String, parent: String) : Parent(parent) {
 }
 
 open class Parent(var parent: String)
+
+
+fun main(args: Array<String>) {
+    typeConvert()
+}

@@ -12,3 +12,8 @@ fun range(){
     println(intRange.contains(12))
     println(12 in intRange1)
 }
+
+
+fun main(args: Array<String>) {
+    range()
+}
