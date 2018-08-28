@@ -16,3 +16,8 @@ fun forExpression(){
     }
 
 }
+
+
+fun main(args: Array<String>) {
+    forExpression()
+}

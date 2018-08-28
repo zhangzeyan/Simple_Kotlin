@@ -11,3 +11,8 @@ fun ifExpression() {
     }
     println(c)
 }
+
+
+fun main(args: Array<String>) {
+    ifExpression()
+}

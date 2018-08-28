@@ -12,3 +12,7 @@ fun hello(double: Double = 9.0, vararg ints: Int, string: String){
     println(string)
 }
 
+fun main(args: Array<String>) {
+    params()
+}
+

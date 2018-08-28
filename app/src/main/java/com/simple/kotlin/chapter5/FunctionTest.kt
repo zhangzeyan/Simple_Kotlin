@@ -1,10 +1,6 @@
 package com.simple.kotlin.chapter5
 
-import android.system.Os.close
-import android.text.TextUtils
-import android.util.Log
-import java.io.BufferedReader
-import java.io.FileReader
+import com.simple.kotlin.chapter4.interfaceDemo
 import java.io.OutputStream
 import java.nio.charset.Charset
 
@@ -121,9 +117,9 @@ fun functionTest() {
 
 
 //    //偏函数
-//    val bytes = "我是中国人".toByteArray(charset("GBK"))
-//    val stringFromGBK = makeStringFromGbkBytes(bytes)
-//    println(stringFromGBK)
+    val bytes = "我是中国人".toByteArray(charset("GBK"))
+    val stringFromGBK = makeStringFromGbkBytes(bytes)
+    println(stringFromGBK)
 
 }
 
@@ -202,3 +198,8 @@ val makeString = fun(byteArray: ByteArray, charset: Charset): String {
 val makeStringFromGbkBytes = makeString.partial2(charset("GBK"))
 
 fun<P1,P2,R> Function2<P1,P2,R>.partial2(p2: P2)= fun(p1: P1)= this(p1,p2)
+
+
+fun main(args: Array<String>) {
+    functionTest()
+}

@@ -1,6 +1,7 @@
 package com.simple.kotlin.chapter4
 
 import android.view.View
+import com.simple.kotlin.chapter3.params
 import com.simple.kotlin.chapter4.annotation.PoKo
 import kotlin.reflect.KProperty
 
@@ -326,3 +327,8 @@ class Seek() : PlayerCmd()
 object Pause : PlayerCmd()
 object Resume : PlayerCmd()
 object Stop: PlayerCmd()
+
+
+fun main(args: Array<String>) {
+    interfaceDemo()
+}

@@ -20,3 +20,7 @@ fun typeString(){
     println(string1 == string3)
     println(string1 === string3)
 }
+
+fun main(args: Array<String>) {
+    typeString()
+}

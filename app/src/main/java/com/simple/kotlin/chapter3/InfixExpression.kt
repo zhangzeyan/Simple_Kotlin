@@ -15,3 +15,7 @@ fun infixExpression(){
         println(s)
     }
 }
+
+fun main(args: Array<String>) {
+    infixExpression()
+}

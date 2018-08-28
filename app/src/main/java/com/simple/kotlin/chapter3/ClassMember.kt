@@ -35,3 +35,8 @@ fun classMember() {
     println(cm.field)
     println(cm.n)
 }
+
+
+fun main(args: Array<String>) {
+    classMember()
+}

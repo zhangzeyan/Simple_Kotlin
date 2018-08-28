@@ -9,3 +9,9 @@ fun whenExpression(){
         else ->println("dd")
     }
 }
+
+
+
+fun main(args: Array<String>) {
+    whenExpression()
+}

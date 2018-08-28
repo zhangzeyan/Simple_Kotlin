@@ -46,3 +46,8 @@ val sum3 = { arg1: Int, arg2: Int, arg3: Int ->
 fun addNumber(number: Int){
     println(number * 2)
 }
+
+
+fun main(args: Array<String>) {
+    lambda()
+}
