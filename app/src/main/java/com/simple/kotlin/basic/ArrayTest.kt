@@ -1,4 +1,4 @@
-package com.simple.kotlin.chapter2
+package com.simple.kotlin.basic
 
 
 val arrayString: Array<String> = arrayOf("simple", "android")

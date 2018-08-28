@@ -22,11 +22,11 @@ android {
 }
 
 noArg{
-    annotation("com.simple.kotlin.chapter4.annotation.PoKo")
+    annotation("com.simple.kotlin.interfaces.annotation.PoKo")
 }
 
 allOpen{
-    annotation("com.simple.kotlin.chapter4.annotation.PoKo")
+    annotation("com.simple.kotlin.interfaces.annotation.PoKo")
 }
 
 

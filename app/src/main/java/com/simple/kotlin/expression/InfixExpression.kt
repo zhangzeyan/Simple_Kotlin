@@ -1,4 +1,4 @@
-package com.simple.kotlin.chapter3
+package com.simple.kotlin.expression
 
 class Student{
     infix fun on(any:Any): Boolean {

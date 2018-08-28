@@ -1,6 +1,5 @@
-package com.simple.kotlin.chapter5
+package com.simple.kotlin.function
 
-import com.simple.kotlin.chapter4.interfaceDemo
 import java.io.OutputStream
 import java.nio.charset.Charset
 

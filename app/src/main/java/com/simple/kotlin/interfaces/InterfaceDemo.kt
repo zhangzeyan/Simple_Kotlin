@@ -1,8 +1,7 @@
-package com.simple.kotlin.chapter4
+package com.simple.kotlin.interfaces
 
 import android.view.View
-import com.simple.kotlin.chapter3.params
-import com.simple.kotlin.chapter4.annotation.PoKo
+import com.simple.kotlin.interfaces.annotation.PoKo
 import kotlin.reflect.KProperty
 
 

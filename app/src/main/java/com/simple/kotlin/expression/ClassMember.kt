@@ -1,4 +1,4 @@
-package com.simple.kotlin.chapter3
+package com.simple.kotlin.expression
 
 class ClassMember(var field: String = "abc", notFile: String) {
 

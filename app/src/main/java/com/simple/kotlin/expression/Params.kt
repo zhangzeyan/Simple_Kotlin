@@ -1,4 +1,4 @@
-package com.simple.kotlin.chapter3
+package com.simple.kotlin.expression
 
 fun params(){
     var array = intArrayOf(12,13,14)

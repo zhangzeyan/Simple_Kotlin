@@ -1,6 +1,4 @@
-package com.simple.kotlin.chapter4;
-
-import java.net.CookieManager;
+package com.simple.kotlin.interfaces;
 
 /**
  * @fileName:
